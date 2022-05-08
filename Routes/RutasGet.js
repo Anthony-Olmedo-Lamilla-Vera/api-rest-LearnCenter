@@ -1,0 +1,31 @@
+const AllDatosUser = require("../MethodsGet/AllDatosUser");
+const GETCarreras = require("../MethodsGet/GETCarreras");
+const GetContenidoMateria = require("../MethodsGet/GetContenidoMateria");
+const GetEntregasTareas = require("../MethodsGet/GetEntregas");
+const GetEntregasUser = require("../MethodsGet/GetEntregasUsers");
+const GetEntregaUser = require("../MethodsGet/GetEntregaUser");
+const GetEstudianteCarrera = require("../MethodsGet/GetEstudentCarrera");
+const GetMateriaID = require("../MethodsGet/GetMateriaID");
+const GetMaterias = require("../MethodsGet/GetMaterias");
+const GetMaterias_Profesor = require("../MethodsGet/GetMaterias_Profesor");
+const GetSemestre = require("../MethodsGet/GetSemestre");
+const GetTareas = require("../MethodsGet/GetTareas");
+const GetUser = require("../MethodsGet/GetUser");
+const VerifyProfesor = require("../MethodsTareas/VerifyProfesor");
+
+const rutasGet = require("express").Router();
+rutasGet.get("/materias", GetMaterias);
+rutasGet.get("/Carreras", GETCarreras);
+rutasGet.get("/Semestres", GetSemestre);
+rutasGet.get("/Users", GetUser);
+rutasGet.get("/Tareas", GetTareas);
+rutasGet.get("/Entregas", GetEntregasTareas);
+rutasGet.get("/Estudiantes-carrera", GetEstudianteCarrera);
+rutasGet.get("/User/:iduser", AllDatosUser);
+rutasGet.get("/Get-Entrega/:idTarea", GetEntregaUser);
+rutasGet.get("/Get-materias/:idCarrera", GetMateriaID);
+rutasGet.get("/GetMateria-Profesor/:idprofesor", GetMaterias_Profesor);
+rutasGet.get("/GetMateria-contenido/:idmateria", GetContenidoMateria);
+rutasGet.get("/GetUsers-Tareas/:idTarea", GetEntregasUser);
+
+module.exports = rutasGet;
